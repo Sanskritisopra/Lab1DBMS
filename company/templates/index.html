@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<styles>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+        font-style: italic;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        background-color: cadetblue;
+        color:rgb(56, 6, 83);
+        /* text-decoration-color: aliceblue; */
+        /* font-weight: 300; */
+    }
+</styles>
+<body>
+    <h1>This template is return  by Django Server</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>InternID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>TeamID</th>
+                <th>Joining Date</th>
+                <th>ManagerID</th>
+                <th>EmailID</th>
+                <th>Mobile No.</th>
+                <th>Location</th>
+                <th>Stipend</th>
+            </tr>
+        </thead>
+
+        {% for intern in interns %}
+            <tr>
+                <td>{{ intern.InternID }}</td>
+                <td>{{ intern.FirstName }}</td>
+                <td>{{ intern.LastName }}</td>
+                <td>{{ intern.TeamID }}</td>
+                <td>{{ intern.JoiningDate }}</td>
+                <td>{{ intern.ManagerID }}</td>
+                <td>{{ intern.Email }}</td>
+                <td>{{ intern.PhoneNo }}</td>
+                <td>{{ intern.Location }}</td>
+                <td>{{ intern.Stipend }}</td>
+            </tr>
+            {% empty %}
+        <tr>
+            <td colspan="10">No interns available.</td>
+        </tr>
+        {% endfor %}
+
+        </table>
+    </body>
+    
+
+</html>
